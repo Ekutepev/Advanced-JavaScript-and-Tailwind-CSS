@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
   </style>
   <script src="main.js" type="module"></script>
 </head>
+
 <body class="bg-slate-100 dark:bg-slate-900 min-h-screen">
   <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -21,27 +23,31 @@
           <input id="dark-mode-toggle" type="checkbox" class="h-4 w-4 rounded border-slate-300 cursor-pointer" />
           Dark mode
         </label>
-        <span class="text-xs font-semibold text-blue-700 bg-blue-100 dark:text-blue-300 dark:bg-blue-900 px-3 py-1 rounded-full">CPRG 306 &middot; week 2</span>
+        <span
+          class="text-xs font-semibold text-blue-700 bg-blue-100 dark:text-blue-300 dark:bg-blue-900 px-3 py-1 rounded-full">CPRG
+          306 &middot; week 2</span>
       </div>
     </div>
   </header>
 
-<!-- THIS IS FOR THE NAV!!!! -->
+  <!-- THIS IS FOR THE NAV!!!! -->
   <nav class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
     <div class="max-w-5xl mx-auto px-6 flex gap-2">
-      <a
-        href="index.html"
+      <a href="index.html"
         class="px-4 py-3 text-sm font-semibold border-b-2 border-blue-600 text-blue-600 dark:text-blue-400">
         Converters
       </a>
-      <a
-        href="currency.html"
+      <a href="currency.html"
         class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
         Currency
       </a>
+      <a href="distance.html"
+        class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+        Distance
+      </a>
     </div>
   </nav>
-<!-- THE END OF THE TABS  -->
+  <!-- THE END OF THE TABS  -->
 
 
   <section class="max-w-5xl mx-auto px-6 pt-12 pb-8 text-center">
@@ -62,16 +68,12 @@
         <label for="kg-input" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
           Kilograms
         </label>
-        <input id="kg-input"
-        type="number"
-        value="0"
-        class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
-        focus:border-blue-500 focus:outline-none"
-        />
+        <input id="kg-input" type="number" value="0" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
+        focus:border-blue-500 focus:outline-none" />
 
         <button id="kg-button" class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
         hover:bg-blue-700 transition cursor-pointer">
-        Convert
+          Convert
         </button>
 
         <div class="mt-5 rounded-lg bg-slate-50 dark:bg-slate-700 p-4 text-center">
@@ -91,16 +93,12 @@
         <label for="miles-input" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
           Miles
         </label>
-        <input id="miles-input"
-        type="number"
-        value="0"
-        class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
-        focus:border-emerald-500 focus:outline-none"
-        />
+        <input id="miles-input" type="number" value="0" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
+        focus:border-emerald-500 focus:outline-none" />
 
         <button id="miles-button" class="w-full mt-4 rounded-lg bg-emerald-600 px-4 py-2 font-semibold text-white
         hover:bg-emerald-700 transition cursor-pointer">
-        Convert
+          Convert
         </button>
 
         <div class="mt-5 rounded-lg bg-slate-50 dark:bg-slate-700 p-4 text-center">
@@ -120,16 +118,12 @@
         <label for="litres-input" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
           Litres
         </label>
-        <input id="litres-input"
-        type="number"
-        value="0"
-        class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
-        focus:border-violet-500 focus:outline-none"
-        />
+        <input id="litres-input" type="number" value="0" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
+        focus:border-violet-500 focus:outline-none" />
 
         <button id="litres-button" class="w-full mt-4 rounded-lg bg-violet-600 px-4 py-2 font-semibold text-white
         hover:bg-violet-700 transition cursor-pointer">
-        Convert
+          Convert
         </button>
 
         <div class="mt-5 rounded-lg bg-slate-50 dark:bg-slate-700 p-4 text-center">
@@ -153,4 +147,5 @@
   </footer>
 
 </body>
+
 </html>

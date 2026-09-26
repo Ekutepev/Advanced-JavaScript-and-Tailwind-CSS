@@ -9,14 +9,15 @@
   <!-- Dark mode switch -->
   <style type="text/tailwindcss">
     @custom-variant dark (&:where(.dark, .dark *));
-  </style>
-  <script src="currency.js" type="module"></script>
+    </style>
+  <script src="distance.js" type="module"></script>
 </head>
 
 <body class="bg-slate-100 dark:bg-slate-900 min-h-screen">
   <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <h1 class="text-lg font-bold text-slate-900 dark:text-white">Unit Converter</h1>
+      <!-- The little checkmark to change the colors  -->
       <div class="flex items-center gap-4">
         <label class="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 cursor-pointer">
           <input id="dark-mode-toggle" type="checkbox" class="h-4 w-4 rounded border-slate-300 cursor-pointer" />
@@ -32,15 +33,15 @@
   <nav class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
     <div class="max-w-5xl mx-auto px-6 flex gap-2">
       <a href="index.html"
-        class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+        class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:hover:text-slate-200">
         Converters
       </a>
       <a href="currency.html"
-        class="px-4 py-3 text-sm font-semibold border-b-2 border-blue-600 text-blue-600 dark:text-blue-400">
+        class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
         Currency
       </a>
       <a href="distance.html"
-        class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+        class="px-4 py-3 text-sm font-semibold border-b-2 border-blue-600 text-blue-600 dark:text-slate-400 hover:text-slate-700 dark:text-blue-400">
         Distance
       </a>
     </div>
@@ -48,61 +49,62 @@
 
   <section class="max-w-5xl mx-auto px-6 pt-12 pb-8 text-center">
     <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
-      currency, converted
+      Distance converter
     </h2>
     <p class="text-base text-slate-600 dark:text-slate-400 mt-3 max-w-xl mx-auto">
-      Switch the direction and convert between US and Canadian dollars.
+      Switch the direction and convert between miles and kilometers.
     </p>
     <p class="text-base text-slate-600 dark:text-slate-400 mt-3 mx-auto font-bold">
-      The currency rate is fixed at 1 USD = 1.4147 CAD, the market rate on September 25, 2026
+      This conversion rate is fixed at 1 mile = 1.60934 kilometers.
     </p>
-
   </section>
 
   <main class="max-w-5xl mx-auto px-6 pb-16">
     <div class="max-w-md mx-auto bg-white dark:bg-slate-800 rounded-2xl shadow-md p-6">
-      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Currency</h3>
-      <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">USD and CAD</p>
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Distance</h3>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Miles and Kilometers</p>
 
-      <label for="currency-direction" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
+      <label for="distance-direction" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
         Direction
       </label>
-      <select id="currency-direction" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
+      <select id="distance-direction" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
       focus:border-amber-500 focus:outline-none cursor-pointer">
-        <option value="usd-to-cad">USD to CAD</option>
-        <option value="cad-to-usd">CAD to USD</option>
+        <option value="miles-to-kilometers">Miles to Kilometers</option>
+        <option value="kilometers-to-miles">Kilometers to Miles</option>
       </select>
 
-      <label id="currency-input-label" for="currency-input"
+      <label id="distance-input-label" for="distance-input"
         class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
-        US Dollars
+        Miles
       </label>
-      <input id="currency-input" type="number" value="0" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
+      <input id="distance-input" type="number" value="0" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
       focus:border-amber-500 focus:outline-none" />
 
-      <button id="currency-button" class="w-full mt-4 rounded-lg bg-amber-600 px-4 py-2 font-semibold text-white
-      hover:bg-amber-700 transition cursor-pointer">
+      <button id="distance-button" class="w-full mt-4 rounded-lg bg-teal-500 px-4 py-2 font-semibold text-white
+      hover:bg-teal-700 transition cursor-pointer">
         Convert
       </button>
 
       <div class="mt-5 rounded-lg bg-slate-50 dark:bg-slate-700 p-4 text-center">
-        <p id="currency-result-label" class="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
-          Canadian Dollars
+        <p id="distance-result-label" class="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+          Kilometers
         </p>
-        <p id="currency-result" class="text-2xl font-bold text-amber-600 dark:text-amber-400 mt-1">
+        <p id="distance-result" class="text-2xl font-bold text-amber-600 dark:text-amber-400 mt-1">
           0.00
         </p>
       </div>
     </div>
   </main>
 
-  <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
+  <footer
+    class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 fixed bottom-0 inset-x-0 w-full">
     <div class="max-w-5xl mx-auto px-6 py-6 text-center">
       <p class="text-sm text-slate-500 dark:text-slate-400">
         Built with Tailwind CSS and TypeScript &middot; CPRG 306 Web Development 2
       </p>
     </div>
   </footer>
+
 
 </body>
 
