@@ -39,3 +39,17 @@ const handleLitresConvert = (): void  => {
 };
 
 litresButton.addEventListener("click", handleLitresConvert);
+
+const darkModeToggle = document.getElementById("dark-mode-toggle") as HTMLInputElement;
+
+const applyDarkMode = (isDark: boolean): void => {
+  document.documentElement.classList.toggle("dark", isDark);
+  darkModeToggle.checked = isDark;
+  localStorage.setItem("dark-mode", String(isDark));
+};
+
+applyDarkMode(localStorage.getItem("dark-mode") === "true");
+
+darkModeToggle.addEventListener("change", () => {
+  applyDarkMode(darkModeToggle.checked);
+});
