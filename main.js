@@ -28,5 +28,15 @@ const handleLitresConvert = () => {
     litresResult.textContent = gallons.toFixed(2);
 };
 litresButton.addEventListener("click", handleLitresConvert);
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+const applyDarkMode = (isDark) => {
+    document.documentElement.classList.toggle("dark", isDark);
+    darkModeToggle.checked = isDark;
+    localStorage.setItem("dark-mode", String(isDark));
+};
+applyDarkMode(localStorage.getItem("dark-mode") === "true");
+darkModeToggle.addEventListener("change", () => {
+    applyDarkMode(darkModeToggle.checked);
+});
 export {};
 //# sourceMappingURL=main.js.map
