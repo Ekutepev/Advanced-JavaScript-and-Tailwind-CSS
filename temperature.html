@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Temperature Converter</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <!-- Dark mode switch -->
   <style type="text/tailwindcss">
     @custom-variant dark (&:where(.dark, .dark *));
   </style>
-  <script src="currency.js" type="module"></script>
+  <script src="temperature.js" type="module"></script>
 </head>
 
 <body class="bg-slate-100 dark:bg-slate-900 min-h-screen">
@@ -31,69 +31,69 @@
 
   <nav class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
     <div class="max-w-5xl mx-auto px-6 flex gap-2">
-      <a href="index.html"
+        <a href="index.html"
         class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
-        Converters
-      </a>
-      <a href="currency.html"
+            Converters
+        </a>
+        <a href="currency.html"
+        class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+            Currency
+        </a>
+        <a href="distance.html"
+        class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+            Distance
+        </a>
+        <a href="temperature.html"
         class="px-4 py-3 text-sm font-semibold border-b-2 border-blue-600 text-blue-600 dark:text-blue-400">
-        Currency
-      </a>
-      <a href="distance.html"
-        class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
-        Distance
-      </a>
-      <a href="temperature.html"
-        class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
             Temperature
-      </a>
+        </a>
     </div>
   </nav>
 
   <section class="max-w-5xl mx-auto px-6 pt-12 pb-8 text-center">
     <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
-      currency, converted
+        Temperature Converter
     </h2>
     <p class="text-base text-slate-600 dark:text-slate-400 mt-3 max-w-xl mx-auto">
-      Switch the direction and convert between US and Canadian dollars.
+        Switch the direction and convert between Celsius and Fahrenheit.
     </p>
     <p class="text-base text-slate-600 dark:text-slate-400 mt-3 mx-auto font-bold">
-      The currency rate is fixed at 1 USD = 1.4147 CAD, the market rate on September 25, 2026
+        (Celsius → Fahrenheit)	°F = °C x 9/5 + 32 and (Fahrenheit → Celsius)	°C = (°F - 32) x 5/9
     </p>
 
   </section>
 
   <main class="max-w-5xl mx-auto px-6 pb-16">
     <div class="max-w-md mx-auto bg-white dark:bg-slate-800 rounded-2xl shadow-md p-6">
-      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Currency</h3>
-      <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">USD and CAD</p>
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Temperature</h3>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Celsius and Fahrenheit</p>
 
-      <label for="currency-direction" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
+      <label for="temperature-direction" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
         Direction
       </label>
-      <select id="currency-direction" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
+      <select id="temperature-direction" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
       focus:border-amber-500 focus:outline-none cursor-pointer">
-        <option value="usd-to-cad">USD to CAD</option>
-        <option value="cad-to-usd">CAD to USD</option>
+        <option value="celsius-to-fahrenheit">Celsius to Fahrenheit</option>
+        <option value="fahrenheit-to-celsius">Fahrenheit to Celsius</option>
       </select>
 
-      <label id="currency-input-label" for="currency-input"
+      <label id="temperature-input-label" for="temperature-input"
         class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
-        US Dollars
+        Celsius
       </label>
-      <input id="currency-input" type="number" value="0" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
+      <input id="temperature-input" type="number" value="0" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
       focus:border-amber-500 focus:outline-none" />
 
-      <button id="currency-button" class="w-full mt-4 rounded-lg bg-amber-600 px-4 py-2 font-semibold text-white
+      <button id="temperature-button" class="w-full mt-4 rounded-lg bg-amber-600 px-4 py-2 font-semibold text-white
       hover:bg-amber-700 transition cursor-pointer">
         Convert
       </button>
 
       <div class="mt-5 rounded-lg bg-slate-50 dark:bg-slate-700 p-4 text-center">
-        <p id="currency-result-label" class="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
-          Canadian Dollars
+        <p id="temperature-result-label" class="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+          Fahrenheit
         </p>
-        <p id="currency-result" class="text-2xl font-bold text-amber-600 dark:text-amber-400 mt-1">
+        <p id="temperature-result" class="text-2xl font-bold text-amber-600 dark:text-amber-400 mt-1">
           0.00
         </p>
       </div>
