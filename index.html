@@ -13,7 +13,7 @@
   <script src="main.js" type="module"></script>
 </head>
 
-<body class="bg-slate-100 dark:bg-slate-900 min-h-screen">
+<body class="bg-slate-100 dark:bg-slate-900 min-h-screen flex flex-col">
   <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <h1 class="text-lg font-bold text-slate-900 dark:text-white">Unit Converter</h1>
@@ -47,105 +47,80 @@
       </a>
       <a href="temperature.html"
         class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
-            Temperature
-      <a href="weight.html"
-        class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
-        Weight
-      </a>
+        Temperature
+        <a href="weight.html"
+          class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+          Weight
+        </a>
     </div>
   </nav>
   <!-- THE END OF THE TABS  -->
 
 
-  <section class="max-w-5xl mx-auto px-6 pt-12 pb-8 text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
-      convert anything, instantly
-    </h2>
-    <p class="text-base text-slate-600 dark:text-slate-400 mt-3 max-w-xl mx-auto">
-      Three small tools for the units you actually run into: weight, distance and volume.
-    </p>
-  </section>
+  <main class="flex-1 flex flex-col justify-center max-w-5xl mx-auto px-6 pb-16 ">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white ">
+        convert anything, instantly
+      </h2>
+      <p class="text-base text-slate-600 dark:text-slate-400 mt-3 max-w-xl mx-auto">
+        Four small tools for the units you actually run into: Currancy, Weight, Distance and Tempurature.
+      </p>
+    </div>
 
-  <main class="max-w-5xl mx-auto px-6 pb-16">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
       <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md p-6">
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Weight</h3>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Kilograms to pounds</p>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Currancy Converter</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">USD to CAD</p>
 
-        <label for="kg-input" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
-          Kilograms
-        </label>
-        <input id="kg-input" type="number" value="0" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
-        focus:border-blue-500 focus:outline-none" />
-
-        <button id="kg-button" class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white
-        hover:bg-blue-700 transition cursor-pointer">
-          Convert
-        </button>
-
-        <div class="mt-5 rounded-lg bg-slate-50 dark:bg-slate-700 p-4 text-center">
-          <p class="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
-            Pounds
-          </p>
-          <p id="kg-result" class="text-2xl font-bold text-blue-600 dark:text-blue-400 mt-1">
-            0.00
-          </p>
-        </div>
+        <form action="currency.html" method="get">
+          <button id="litres-button" class="w-full mt-4 rounded-lg bg-amber-600 px-4 py-2 font-semibold text-white
+          hover:bg-amber-700 transition cursor-pointer">
+            Convert
+          </button>
+        </form>
       </div>
 
       <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md p-6">
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Distance</h3>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Distance Converter</h3>
         <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Miles to kilometers</p>
 
-        <label for="miles-input" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
-          Miles
-        </label>
-        <input id="miles-input" type="number" value="0" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
-        focus:border-emerald-500 focus:outline-none" />
-
-        <button id="miles-button" class="w-full mt-4 rounded-lg bg-emerald-600 px-4 py-2 font-semibold text-white
-        hover:bg-emerald-700 transition cursor-pointer">
-          Convert
-        </button>
-
-        <div class="mt-5 rounded-lg bg-slate-50 dark:bg-slate-700 p-4 text-center">
-          <p class="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
-            Kilometers
-          </p>
-          <p id="miles-result" class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mt-1">
-            0.00
-          </p>
-        </div>
+        <form action="distance.html" method="get">
+          <button id="miles-button" class="w-full mt-4 rounded-lg bg-teal-500 px-4 py-2 font-semibold text-white
+            hover:bg-teal-700 transition cursor-pointer">
+            Convert
+          </button>
+        </form>
       </div>
 
       <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md p-6">
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Volume</h3>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">litres to US gallons</p>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Tempurature Converter</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Celsius to Fahrenheit</p>
 
-        <label for="litres-input" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
-          Litres
-        </label>
-        <input id="litres-input" type="number" value="0" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
-        focus:border-violet-500 focus:outline-none" />
-
-        <button id="litres-button" class="w-full mt-4 rounded-lg bg-violet-600 px-4 py-2 font-semibold text-white
-        hover:bg-violet-700 transition cursor-pointer">
-          Convert
-        </button>
-
-        <div class="mt-5 rounded-lg bg-slate-50 dark:bg-slate-700 p-4 text-center">
-          <p class="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
-            US Gallons
-          </p>
-          <p id="litres-result" class="text-2xl font-bold text-violet-600 dark:text-violet-400 mt-1">
-            0.00
-          </p>
-        </div>
+        <form action="temperature.html" method="get">
+          <button id="litres-button" class="w-full mt-4 rounded-lg bg-violet-600 px-4 py-2 font-semibold text-white
+          hover:bg-violet-700 transition cursor-pointer">
+            Convert
+          </button>
+        </form>
       </div>
+
+      <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md p-6">
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Weight Converter</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Kilograms to pounds</p>
+
+        <form action="weight.html" method="get">
+          <button id="kg-button" class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white 
+          hover:bg-blue-700 transition cursor-pointer">
+            Convert
+          </button>
+        </form>
+      </div>
+
     </div>
   </main>
 
-  <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
+  <footer
+    class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 fixed bottom-0 inset-x-0 w-full">
     <div class="max-w-5xl mx-auto px-6 py-6 text-center">
       <p class="text-sm text-slate-500 dark:text-slate-400">
         Built with Tailwind CSS and TypeScript &middot; CPRG 306 Web Development 2
