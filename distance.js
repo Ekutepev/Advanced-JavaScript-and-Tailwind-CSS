@@ -1,15 +1,26 @@
-const milesToKilometers = (miles) => miles * 1.60934;
-const kilometersToMiles = (kilometers) => kilometers / 1.60934;
+const createDistanceConverter = (fromUnit, toUnit) => {
+    const factor = fromUnit === "mi" && toUnit === "km" ? 1.60934
+        : fromUnit === "km" && toUnit === "mi" ? 0.621371
+            : 1;
+    return (value) => Array.isArray(value) ? value.map((v) => v * factor) : value * factor;
+};
+const milesToKilometers = createDistanceConverter("mi", "km");
+const kilometersToMiles = createDistanceConverter("km", "mi");
 const distanceInput = document.getElementById("distance-input");
 const distanceDirection = document.getElementById("distance-direction");
 const distanceButton = document.getElementById("distance-button");
 const distanceResult = document.getElementById("distance-result");
 const distanceResultLabel = document.getElementById("distance-result-label");
 const distanceInputLabel = document.getElementById("distance-input-label");
+const parseUnits = (value) => {
+    const values = value.split(",").map((v) => parseFloat(v.trim()));
+    return values.length === 1 ? values[0] : values;
+};
+const formatUnits = (value) => Array.isArray(value) ? value.map(v => v.toFixed(2)).join(", ") : value.toFixed(2);
 const handledistanceConvert = () => {
-    const miles = Number(distanceInput.value);
-    const kilometers = distanceDirection.value === "miles-to-kilometers" ? milesToKilometers(miles) : kilometersToMiles(miles);
-    distanceResult.textContent = kilometers.toFixed(2);
+    const inputValue = parseUnits(distanceInput.value);
+    const convert = distanceDirection.value === "miles-to-kilometers" ? milesToKilometers : kilometersToMiles;
+    distanceResult.textContent = formatUnits(convert(inputValue));
 };
 const handleDistanceDirectionChange = () => {
     const isMilesToKilometers = distanceDirection.value === "miles-to-kilometers";
