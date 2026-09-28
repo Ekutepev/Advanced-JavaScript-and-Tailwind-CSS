@@ -56,8 +56,8 @@ const handleWeightConvert = (): void => {
 
 const handleWeightDirectionChange = (): void => {
   const isKgToLb = weightDirection.value === "kg-to-lb";
-  weightInputLabel.textContent = isKgToLb ? "Kilograms" : "Pounds";
-  weightResultLabel.textContent = isKgToLb ? "Pounds" : "Kilograms";
+  weightInputLabel.textContent = isKgToLb ? "Kilograms:" : "Pounds:";
+  weightResultLabel.textContent = isKgToLb ? "Pounds:" : "Kilograms:";
   handleWeightConvert();
 };
 

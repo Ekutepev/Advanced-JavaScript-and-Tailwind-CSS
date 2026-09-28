@@ -48,8 +48,8 @@ const handleCurrencyConvert = (): void => {
 
 const handleCurrencyDirectionChange = (): void => {
   const isUsdToCad = currencyDirection.value === "usd-to-cad";
-  currencyInputLabel.textContent = isUsdToCad ? "US Dollars" : "Canadian Dollars";
-  currencyResultLabel.textContent = isUsdToCad ? "Canadian Dollars" : "US Dollars";
+  currencyInputLabel.textContent = isUsdToCad ? "US Dollars:" : "Canadian Dollars:";
+  currencyResultLabel.textContent = isUsdToCad ? "Canadian Dollars:" : "US Dollars:";
   handleCurrencyConvert();
 };
 

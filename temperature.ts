@@ -8,10 +8,20 @@ const temperatureResult = document.getElementById("temperature-result") as HTMLP
 const temperatureResultLabel = document.getElementById("temperature-result-label") as HTMLParagraphElement;
 const temperatureInputLabel = document.getElementById("temperature-input-label") as HTMLLabelElement;
 
+// Parses "5" into a single number, or "1, 2.5, 10" into an array of numbers.
+const parseValues = (raw: string): number | number[] => {
+    const parts = raw.split(",").map((part) => Number(part.trim()));
+    return parts.length === 1 ? parts[0]! : parts;
+};
+
+const formatValues = (value: number | number[]): string =>
+    Array.isArray(value) ? value.map((entry) => entry.toFixed(2)).join(", ") : value.toFixed(2);
+
 const handleTempConvert = (): void => {
-    const temperature: number = Number(temperatureInput.value);
-    const converted: number = temperatureDirection.value === "celsius-to-fahrenheit" ? celsiusToFahrenheit(temperature) : fahrenheitToCelsius(temperature);
-    temperatureResult.textContent = converted.toFixed(2);
+    const values = parseValues(temperatureInput.value);
+    const convert = temperatureDirection.value === "celsius-to-fahrenheit" ? celsiusToFahrenheit : fahrenheitToCelsius;
+    const converted = Array.isArray(values) ? values.map(convert) : convert(values);
+    temperatureResult.textContent = formatValues(converted);
 };
 
 const handleTempDirectionChange = (): void => {

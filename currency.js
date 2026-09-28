@@ -35,12 +35,13 @@ const handleCurrencyConvert = () => {
 };
 const handleCurrencyDirectionChange = () => {
     const isUsdToCad = currencyDirection.value === "usd-to-cad";
-    currencyInputLabel.textContent = isUsdToCad ? "US Dollars" : "Canadian Dollars";
-    currencyResultLabel.textContent = isUsdToCad ? "Canadian Dollars" : "US Dollars";
+    currencyInputLabel.textContent = isUsdToCad ? "US Dollars:" : "Canadian Dollars:";
+    currencyResultLabel.textContent = isUsdToCad ? "Canadian Dollars:" : "US Dollars:";
     handleCurrencyConvert();
 };
 currencyButton.addEventListener("click", handleCurrencyConvert);
 currencyDirection.addEventListener("change", handleCurrencyDirectionChange);
+// This handles the dark mode toggle functionality, storing the user's preference in localStorage and applying it on page load.
 const darkModeToggle = document.getElementById("dark-mode-toggle");
 const applyDarkMode = (isDark) => {
     document.documentElement.classList.toggle("dark", isDark);
@@ -52,3 +53,4 @@ darkModeToggle.addEventListener("change", () => {
     applyDarkMode(darkModeToggle.checked);
 });
 export {};
+//# sourceMappingURL=currency.js.map

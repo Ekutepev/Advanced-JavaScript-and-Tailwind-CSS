@@ -33,7 +33,7 @@
   <nav class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
     <div class="max-w-5xl mx-auto px-6 flex gap-2">
       <a href="index.html"
-        class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:hover:text-slate-200">
+        class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
         Converters
       </a>
       <a href="currency.html"
@@ -41,7 +41,7 @@
         Currency
       </a>
       <a href="distance.html"
-        class="px-4 py-3 text-sm font-semibold border-b-2 border-blue-600 text-blue-600 dark:text-slate-400 hover:text-slate-700 dark:text-blue-400">
+        class="px-4 py-3 text-sm font-semibold border-b-2 border-blue-600 text-blue-600 dark:text-slate-400 dark:text-blue-400">
         Distance
       </a>
       <a href="temperature.html"
@@ -81,9 +81,12 @@
         <option value="kilometers-to-miles">Kilometers to Miles</option>
       </select>
 
-      <label id="distance-input-label" for="distance-input"
-        class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
+      <p class="text-xs text-slate-500 dark:text-slate-400 mt-5">
         Units - Enter either a single number or use commas-separated list of values (e.g., 0, 2.5, 10)
+      </p>
+      <label id="distance-input-label" for="distance-input"
+        class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-2 mb-2">
+        Miles:
       </label>
       <input id="distance-input" type="text" value="" placeholder="0, 2.5, 10" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
       focus:border-amber-500 focus:outline-none" />
@@ -95,7 +98,7 @@
 
       <div class="mt-5 rounded-lg bg-slate-50 dark:bg-slate-700 p-4 text-center">
         <p id="distance-result-label" class="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
-          Kilometers
+          Kilometers:
         </p>
         <p id="distance-result" class="text-2xl font-bold text-amber-600 dark:text-amber-400 mt-1">
           0.00

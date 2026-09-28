@@ -1,3 +1,10 @@
+/**
+ * Distance Converter
+ * Author: Evgeny Kutepov
+ * Date: 09/27/2026
+ *
+ * Description: Converts distances between miles and kilometers, supporting both single values and comma-separated lists of values.
+ */
 const createDistanceConverter = (fromUnit, toUnit) => {
     const factor = fromUnit === "mi" && toUnit === "km" ? 1.60934
         : fromUnit === "km" && toUnit === "mi" ? 0.621371
@@ -29,7 +36,6 @@ const handleDistanceDirectionChange = () => {
     handledistanceConvert();
 };
 distanceDirection.addEventListener("change", handleDistanceDirectionChange);
-distanceButton.addEventListener("click", handledistanceConvert);
 distanceButton.addEventListener("click", handledistanceConvert);
 const darkModeToggle = document.getElementById("dark-mode-toggle");
 const applyDarkMode = (isDark) => {

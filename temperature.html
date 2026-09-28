@@ -81,11 +81,14 @@
         <option value="fahrenheit-to-celsius">Fahrenheit to Celsius</option>
       </select>
 
+      <p class="text-xs text-slate-500 dark:text-slate-400 mt-5">
+        Units - Enter either a single number or use commas-separated list of values (e.g., 0, 2.5, 10)
+      </p>
       <label id="temperature-input-label" for="temperature-input"
-        class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-5 mb-2">
-        Celsius
+        class="block text-sm font-medium text-slate-700 dark:text-slate-300 mt-2 mb-2">
+        Celsius:
       </label>
-      <input id="temperature-input" type="number" value="0" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
+      <input id="temperature-input" type="text" value="0" placeholder="0, 2.5, 10" class="w-full rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 px-4 py-2 text-slate-900 dark:text-white
       focus:border-amber-500 focus:outline-none" />
 
       <button id="temperature-button" class="w-full mt-4 rounded-lg bg-amber-600 px-4 py-2 font-semibold text-white
@@ -95,7 +98,7 @@
 
       <div class="mt-5 rounded-lg bg-slate-50 dark:bg-slate-700 p-4 text-center">
         <p id="temperature-result-label" class="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
-          Fahrenheit
+          Fahrenheit:
         </p>
         <p id="temperature-result" class="text-2xl font-bold text-amber-600 dark:text-amber-400 mt-1">
           0.00
