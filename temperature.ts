@@ -1,5 +1,23 @@
-const celsiusToFahrenheit = (celsius: number) => (celsius * 9) / 5 + 32;
-const fahrenheitToCelsius = (fahrenheit: number) => ((fahrenheit - 32) * 5) / 9;
+type TemperatureUnit = "celsius" | "fahrenheit";
+
+type TemperatureConverter = {
+    (value: number): number;
+    (value: number[]): number[];
+    (value: number | number[]): number | number[];
+};
+
+const createTemperatureConverter = (fromUnit: TemperatureUnit, toUnit: TemperatureUnit): TemperatureConverter => {
+    const formula: (temp: number) => number =
+        fromUnit === "celsius" && toUnit === "fahrenheit" ? (c) => (c * 9) / 5 + 32
+        : fromUnit === "fahrenheit" && toUnit === "celsius" ? (f) => ((f - 32) * 5) / 9
+        : (t) => t;
+
+    return ((value: number | number[]) =>
+        Array.isArray(value) ? value.map((entry) => formula(entry)) : formula(value)) as TemperatureConverter;
+};
+
+const celsiusToFahrenheit = createTemperatureConverter("celsius", "fahrenheit");
+const fahrenheitToCelsius = createTemperatureConverter("fahrenheit", "celsius");
 
 const temperatureInput = document.getElementById("temperature-input") as HTMLInputElement;
 const temperatureDirection = document.getElementById("temperature-direction") as HTMLSelectElement;
@@ -20,7 +38,7 @@ const formatValues = (value: number | number[]): string =>
 const handleTempConvert = (): void => {
     const values = parseValues(temperatureInput.value);
     const convert = temperatureDirection.value === "celsius-to-fahrenheit" ? celsiusToFahrenheit : fahrenheitToCelsius;
-    const converted = Array.isArray(values) ? values.map(convert) : convert(values);
+    const converted = convert(values);
     temperatureResult.textContent = formatValues(converted);
 };
 
